@@ -18,7 +18,11 @@ for (int i = 0; i < digiArray.Length; i += 2)
     else
         digiArray[i].DecDigits(num);
 }
-NumDigits[] otherDigiArray = NumDigits.CopyTo(digiArray);
+NumDigits[] otherDigiArray = new NumDigits[digiArray.Length];
+for (int i = 0; i < otherDigiArray.Length; i++)
+{
+    otherDigiArray[i] = new NumDigits(digiArray[i]);
+}
 otherDigiArray = NumDigits.BubbleSort(otherDigiArray);
 for (int i = 0; i < 15; i++)
 {
